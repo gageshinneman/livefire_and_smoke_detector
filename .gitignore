@@ -11,7 +11,6 @@ runs/
 
 # Pretrained weights downloaded on demand by ultralytics
 /yolov8n.pt
-/FastSAM-s.pt
 
 # Exploration outputs (regenerable via scripts/)
 scripts/exploration_output/

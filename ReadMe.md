@@ -51,13 +51,13 @@ frontend: `frontend/index.html`, plain html/js + Tailwind CSS, canvas based boun
 
 ## model performance
 
-evaluated on the held out D-Fire test set:
+evaluated on the held out D-Fire test set (`yolo val model=model/best.pt data=data.yaml split=test`):
 
 | | precision | recall | mAP@50 | mAP@50-95 |
 |---|---|---|---|---|
-| overall | 0.767 | 0.717 | 0.781 | 0.457 |
-| smoke | 0.815 | 0.790 | 0.845 | 0.530 |
-| fire | 0.718 | 0.644 | 0.718 | 0.384 |
+| overall | 0.775 | 0.710 | 0.774 | 0.445 |
+| smoke | 0.825 | 0.782 | 0.831 | 0.512 |
+| fire | 0.724 | 0.638 | 0.716 | 0.378 |
 
 fire (smaller, more localized objects) scores lower than smoke (larger, diffuse plumes), see `scripts/review_failures.py` for the failure case analysis behind this gap.
 
@@ -66,7 +66,6 @@ fire (smaller, more localized objects) scores lower than smoke (larger, diffuse 
 - `scripts/explore_data.py`, dataset class balance, image size distribution, sample visualization
 - `scripts/review_failures.py`, runs the model on the test set, flags and visualizes false positives
 - `scripts/live_infer.py`, local webcam/video inference loop with an fps counter, no backend needed
-- `scripts/test_segmentation.py`, exploratory YOLOv8 + FastSAM two stage segmentation benchmark, not wired into the live app, see comments in the script for why
 
 ## license / data
 
